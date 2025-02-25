@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css"
+    <title>WhatsApp UI</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div style="display: flex; align-items: center;">
+                <img src="https://via.placeholder.com/40" alt="User" style="margin-right: 10px;">
+                <i class="fa fa-comment-o" aria-hidden="true" id="firstpage" style="margin-left: 100px;"></i>
+                <i class="fa fa-users" aria-hidden="true" style="margin-right:15px;margin-left:15px" id="communityIcon"></i>
+                <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+                <i class="fa fa-plus-square-o" aria-hidden="true" id="addIcon" style="margin-left: 15px;"></i>
+               
+            
+                <!-- Vertical Ellipsis Button -->
+                <div class="btn-group" style="margin-left: 15px;">
+                    <button 
+                    type="button" 
+                    class="ellipsis-button" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" style="background-color: #111b21; color: #E9EDEF;">
+                    <li><a class="dropdown-item" href="#" style="color: #E9EDEF;">New group</a></li>
+                    <li><a class="dropdown-item" href="#" style="color: #E9EDEF;">Starred messages</a></li>
+                    <li><a class="dropdown-item" href="#" style="color: #E9EDEF;">Select chats</a></li>
+                    <li><a class="dropdown-item" href="#" style="color: #E9EDEF;">Log out</a></li>
+                    <li><hr class="dropdown-divider" style="border-color: #333;"></li>
+                    <li><a class="dropdown-item" href="#" style="color: #E9EDEF;">Get WhatsApp for Windows</a></li>
+                    </ul>
+                </div>
+  
+                    
+  
+            </div>
+        </div>
+        <div class="search-bar" style="position: relative; display: flex; align-items: center;border:1px solid #2A3942; padding: 5px;background-color: #111b21">
+            <i class="fa fa-search" aria-hidden="true" style="position: absolute; left: 10px; color: #888;"></i>
+            <input type="text" placeholder="Search chats..." id="searchInput" style="border: none; outline: none; padding-left: 30px; flex-grow: 1;">
+        </div>
+        <div class="community-section" id="communitySection">
+            <h1>Communities</h1>
+            
+            <img src="whatsapp.JPG" alt="Community Image" style="margin-top: 75px;margin-bottom:30px">
+            <p style="margin-bottom: 20px;"><strong>Stay connected with a community</strong></p>
+            <p>Communities bring members together in topic-based groups, and make it easy to get admin announcements. Any community you are added to will appear here.</p>
+        </div>
+        <div class="status-section" id="statusSection" style="display: none;">
+            <h2>Status</h2>
+        
+            <!-- My Status Section -->
+            <div class="my-status" style="display: flex; align-items: center; margin-top: 20px;">
+                <div style="position: relative;">
+                    <img src="https://via.placeholder.com/50" alt="DP" style="border-radius: 50%; border: 2px solid green;">
+                    <i class="fa fa-plus-circle" style="position: absolute; bottom: 0; right: 0; color: green;"></i>
+                </div>
+                <div style="margin-left: 15px; color: #E9EDEF;">
+                    <div>My Status</div>
+                    <div style="font-size: 14px; color: #888;">Click to add status update</div>
+                </div>
+            </div>
+            
+        
+            <!-- Recent Status Section -->
+            <div class="recent-status" style="margin-top: 30px; color: #E9EDEF;">
+                <h3 style="color: green;">RECENT</h3>
+                <hr class="separator" />
+        
+                <div class="contact-status" style="display: flex; align-items: center; margin-top: 15px;">
+                    <img src="https://via.placeholder.com/50" alt="Contact DP" style="border-radius: 50%; border: 2px solid green;">
+                    <div style="margin-left: 15px;">
+                        <div>Contact Name</div>
+                        <div style="font-size: 14px; color: #888;">Today, 10:00 AM</div>
+                    </div>
+                </div>
+               
+        
+                <!-- Viewed Status Section -->
+                <h3 style="color: green; margin-top: 20px;">VIEWED</h3>
+                <hr class="separator" />
+        
+                <div class="contact-status" style="display: flex; align-items: center; margin-top: 15px;">
+                    <img src="https://via.placeholder.com/50" alt="Contact DP" style="border-radius: 50%; border: 2px solid grey;">
+                    <div style="margin-left: 15px;">
+                        <div>Contact Name</div>
+                        <div style="font-size: 14px; color: #888;">Yesterday, 5:00 PM</div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        
+        <div id="searchContainer" style="display: none; background-color: #111b21; color: #E9EDEF; height: 100%; overflow: hidden;">
+            <div class="search-bar" style="padding: 0%; background-color: #111b21; height: 50px; color: #E9EDEF;">
+                <input type="text" placeholder="Search name or number" class="search-input" />
+            </div>
+            <div class="scroll-div" style="overflow-y: auto; height: calc(100% - 50px);"> <!-- Single scrollable container -->
+                <div class="icon-container" style="background-color: #111b21; color: #E9EDEF;">
+                    <div class="hover1">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span style="color: #E9EDEF;">New group</span>
+                    </div>
+                    <hr class="separator" />
+                    <div class="hover2">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span style="color: #E9EDEF;">New community</span>
+                    </div>
+                    <hr class="separator" />
+                </div>
+                <div class="whatsapp-contacts" style="background-color: #111b21; color: #E9EDEF;">
+                    <h3 style="color: green;">CONTACTS ON WHATSAPP</h3>
+                    <hr class="separator" />
+                    <div id="contacts">
+                        <!-- Contacts will be populated here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+
+
+        <!-- New section added here -->
+        <div class="new-section" style="display: flex; width: 399px; height: 69px; padding: 0px; gap: 5px; background-color: rgb(19, 174, 185)">
+            <div style="width: 35px; height: 35px; padding-top: 10px; margin-top: 1px;margin-bottom:15px; background-color: rgb(19, 174, 185)">
+                <i class="fa fa-bell-slash" aria-hidden="true" style="border-radius: 50%; border: 1px solid white; color: rgb(19, 174, 185); background-color: white; width: 35px; height: 35px; text-align: center; align-content: center; border-radius: 50%"></i>
+            </div>
+            <div style="background-color: rgb(19, 174, 185)">
+                <h5 style="margin: 0%; color: #E9EDEF; background-color: rgb(19, 174, 185)">Turn on notifications</h5>
+                <p style="margin: 0%; color: #E9EDEF; background-color: rgb(19, 174, 185)">Get notified of new messages on your computer</p>
+ 
+            </div>
+            <div style="margin-top: 18px; background-color: rgb(19, 174, 185)">
+                <span aria-hidden="true" data-icon="x" class="" style="color: #E9EDEF; background-color: rgb(19, 174, 185)">
+                    <svg viewBox="0 0 24 24" height="24" width="24" style="background-color: rgb(19, 174, 185)" preserveAspectRatio="xMidYMid meet" class="" fill="currentColor" enable-background="new 0 0 24 24">
+                        <title>x</title>
+                        <path d="M19.6004 17.2L14.3004 11.9L19.6004 6.60005L17.8004 4.80005L12.5004 10.2L7.20039 4.90005L5.40039 6.60005L10.7004 11.9L5.40039 17.2L7.20039 19L12.5004 13.7L17.8004 19L19.6004 17.2Z"></path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        
+        <div class="chat-list">
+            <div class="chat-item" data-chat="1">
+                <img src="Contact1.jfif" alt="Contact 1">
+                <div>
+                    <div class="name">Contact 1</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="2">
+                <img src="Contact2.jpg" alt="Contact 2">
+                <div>
+                    <div class="name">Contact 2</div>
+                    <div class="last-message">Hello!</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="3">
+                <img src="Contact3.jfif" alt="Contact 3">
+                <div>
+                    <div class="name">Contact 3</div>
+                    <div class="last-message">Good morning!</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="4">
+                <img src="Contact4.jfif" alt="Contact 4">
+                <div>
+                    <div class="name">Contact 4</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="5">
+                <img src="Contact5.jpg" alt="Contact 5">
+                <div>
+                    <div class="name">Contact 5</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="6">
+                <img src="Contact6.jfif" alt="Contact 6">
+                <div>
+                    <div class="name">Contact 6</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="7">
+                <img src="Contact7.jfif" alt="Contact 7">
+                <div>
+                    <div class="name">Contact 7</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="8">
+                <img src="Contact8.jfif" alt="Contact 8">
+                <div>
+                    <div class="name">Contact 8</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="9">
+                <img src="Contact9.jfif" alt="Contact 9">
+                <div>
+                    <div class="name">Contact 9</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="10">
+                <img src="Contact10.avif" alt="Contact 10">
+                <div>
+                    <div class="name">Contact 10</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="11">
+                <img src="Contact11.jfif" alt="Contact 11">
+                <div>
+                    <div class="name">Contact 11</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="12">
+                <img src="Contact12.jfif" alt="Contact 12">
+                <div>
+                    <div class="name">Contact 12</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item"data-chat="13">
+                <img src="Contact13.jfif" alt="Contact 13">
+                <div>
+                    <div class="name">Contact 13</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+            <div class="chat-item" data-chat="14">
+                <img src="Contact14.jfif" alt="Contact 14">
+                <div>
+                    <div class="name">Contact 14</div>
+                    <div class="last-message">Hey, how are you?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-chat">
+        <div class="chat-header">
+            <img src="Contact1.jfif" alt="Contact 1">
+            <span>Contact 1</span>
+            <i class="fa fa-video-camera" aria-hidden="true" style="color: #E9EDEF;background-color:#202C33; margin-left:820px" id="videoIcon"></i>
+            <!-- Video Call Container -->
+            <!-- Call Popup -->
+            <div id="callPopup">
+                <p id="callStatus">Calling...</p>
+                <video id="videoElement" autoplay muted></video>
+                <button id="endCallButton">End Call</button>
+            </div>
+            <i class="fa fa-search" aria-hidden="true" style="color: #E9EDEF;background-color:#202C33;margin-left:20px"></i>
+            
+            <div class="btn-group">
+                <button 
+                    type="button" 
+                    class="ellipsis-button" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true" style="background-color:#202C33;color: #E9EDEF;margin-left:20px;margin-right:14px;"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Contact Info</a></li>
+                    <li><a class="dropdown-item" href="#">Select Messages</a></li>
+                    <li><a class="dropdown-item" href="#">Close Chat</a></li>
+                    <li><a class="dropdown-item" href="#">Mute Notifications</a></li>
+                    <li><a class="dropdown-item" href="#">Disappearing Messages</a></li>
+                    <li><a class="dropdown-item" href="#">Clear Chat</a></li>
+                    <li><a class="dropdown-item" href="#">Delete Chat</a></li>
+                    <li><a class="dropdown-item" href="#">Add to Favorites</a></li>
+                    <li><a class="dropdown-item" href="#">Report</a></li>
+                    <li><a class="dropdown-item" href="#">Block</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message">
+                <div class="message receiver">Hello, how are you?</div>
+            </div>
+            <div class="chat-message">
+                <div class="message sender">I'm good, how about you?</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <i class="fa fa-smile-o" aria-hidden="true" style="color: #E9EDEF;"></i>
+            <i class="fa fa-plus" aria-hidden="true" style="margin-left:15px;margin-right:5px;color: #E9EDEF;"></i>
+               
+            <input type="text" placeholder="Type a message..." id="messageInput">
+            <button id="sendBtn"><i class="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

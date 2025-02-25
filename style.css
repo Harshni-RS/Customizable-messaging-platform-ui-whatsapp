@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111b21; 
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 320px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #111b21;
+    color: #E9EDEF;
+}
+
+.sidebar-header img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-header .fa {
+    font-size: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background-color:#2A3942;
+    color: #E9EDEF;
+    font-size: 14px;
+}
+
+.chat-list {
+    overflow-y: auto;
+    flex-grow: 1;
+    background-color: #111b21 ;
+    color: #E9EDEF;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-item:hover {
+    background-color: #494545;
+}
+
+.chat-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.chat-item .name {
+    font-weight: bold;
+    color: #E9EDEF;
+}
+
+.chat-item .last-message {
+    color: #E9EDEF;
+    font-size: 12px;
+}
+
+.main-chat {
+    flex-grow: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    background-image: url('whatsapp_dp.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:#202C33;
+    color: #E9EDEF;
+}
+
+.chat-header img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.chat-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.chat-message {
+    margin: 10px 0;
+    display: flex;
+}
+
+.message {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.sender {
+    background-color:#028468;
+    color:#E9EDEF;
+    margin-left: auto;
+}
+
+.receiver {
+    background-color:#2A3942;
+    color:#E9EDEF;
+    margin-right: auto;
+    border: 1px solid #2A3942;
+}
+
+.chat-input {
+    padding: 10px 20px;
+    background-color:#202C33;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color:#2A3942;
+    color: #E9EDEF;
+}
+
+.chat-input button {
+    background-color:#2A3942;
+    color: #E9EDEF;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.chat-input button:focus {
+    outline: none;
+}
+
+.chat-input button .fa {
+    font-size: 18px;
+}
+.community-section {
+    display: none;
+    
+    color: #E9EDEF;
+    background-color: #111b21;
+    padding: 20px;
+    height:1070px;
+    
+}
+
+.community-section img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.community-section h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.community-section p {
+    font-size: 16px;
+}
+.separator {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+/* Style for the Status Section */
+.status-section h2, .status-section h3 {
+    color: #E9EDEF;
+}
+.status-section {
+    background-color: #111b21;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    color: #E9EDEF;
+}
+.contact-status {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.contact-status img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.contact-status div {
+    font-size: 14px;
+    color: #E9EDEF;
+}
+
+/* My Status Section Styling */
+.my-status {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.my-status img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid green;
+}
+
+.my-status i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: green;
+}
+
+.status-section h2 {
+    font-size: 24px;
+    color: #E9EDEF;
+}
+
+.my-status {
+    color: #E9EDEF;
+}
+
+.recent-status h3 {
+    font-size: 18px;
+}
+i:hover{
+    cursor: pointer;
+}
+.contact-status:hover{
+    cursor: pointer;
+}
+/* Sidebar Header Styling */
+.sidebar-header {
+    background-color: #111b21;
+    color: #E9EDEF;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    height: 50px; /* Fixed height for the search bar */
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #111b21;
+    border-bottom: 1px solid #333;
+}
+.scroll-div {
+    overflow-y: auto; /* Enable scrolling for the entire content */
+    height: calc(100% - 50px); /* Adjust height to leave space for the search bar */
+}
+
+.search-input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Icon Container Styling */
+.icon-container,
+.whatsapp-contacts {
+    padding: 10px;
+    background-color: #111b21;
+    color: #E9EDEF;
+}
+
+.icon-container {
+    margin-bottom: 10px;
+}
+#searchContainer {
+    display: none;
+    background-color: #111b21;
+    color: #E9EDEF;
+    height: 100%;
+    overflow: hidden; /* Prevent horizontal overflow */
+}
+.icon-container span {
+    font-size: 14px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.separator {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+/* WhatsApp Contacts Section */
+
+
+.whatsapp-contacts h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.separator {
+    width: 100%;
+    border: 0;
+    
+    margin: 10px 0;
+    border-top: 1px solid white;
+    
+}
+
+/* Individual Contact Styling */
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #111b21;
+    color: #E9EDEF;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.2s;
+}
+
+.contact-item:hover {
+    background-color: #494545;
+    cursor: pointer;
+}
+
+.contact-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contact-item span {
+    font-size: 14px;
+    color: #E9EDEF;
+}
+.contact-status:hover{
+    background-color: #494545;
+    
+}
+.contact-item{
+    background-color: #111b21; 
+    color: #E9EDEF;
+}
+.icon-container {
+    padding: 10px;
+    background-color: #111b21;
+    color: #E9EDEF;
+    margin-bottom: 10px;
+}
+.dropdown-menu {
+    background-color: #111b21; /* Matches the app's theme */
+    color: #E9EDEF; /* Text color for dropdown items */
+    border: none; /* Removes default border */
+}
+
+.dropdown-menu .dropdown-item {
+    color: #E9EDEF; /* Text color */
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #494545; /* Highlight on hover */
+}
+
+.dropdown-divider {
+    border-color: #333; /* Divider color */
+}
+
+.ellipsis-button {
+    background: none;
+    border: none;
+    color: #E9EDEF;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+#videoIcon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #E9EDEF;
+    background-color: #202C33;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#callPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111b21;
+    color: #E9EDEF;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    text-align: center;
+}
+
+#videoElement {
+    width: 100%;
+    max-width: 550px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#endCallButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#endCallButton:hover {
+    background-color: darkred;
+}
